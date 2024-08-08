@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<title>Digital Colock App with Raj</title>
+		<style>
+			*{font-size:100px; font-family:Cambria;}
+			h1{color:black;}
+			h2{color:black;}
+
+			body{background-color:orange;}
+		</style>
+	</head>
+	<body>
+		<center>
+		<h1 id="greetings"></h1>
+		<h2 id="msg"></h2>
+		<script>
+		function show()
+{
+			
+				
+				let messge=document.getElementById("msg")
+				let greet=document.getElementById("greetings")
+				let d=new Date();
+
+				let hr=d.getHours();
+if(hr<12)
+				greet.innerHTML="Good Morning,its";
+			else if (hr<16)
+				greet.innerHTML="Good Afternoon,its";
+			else if(hr<20)
+				greet.innerHTML="Good Evening,its";
+			else
+				greet.innerHTML="Good Night,its";
+				let shr=hr.toString();
+				if(hr<10)
+					shr="0" +shr;
+
+				let mi=d.getMinutes();
+				let smi=mi.toString();
+				if(mi<10)
+					smi="0" +smi;
+
+				let se=d.getSeconds();
+				let sse=se.toString();
+				if(se<10)
+					sse="0" +sse;
+
+				let ans=shr+":"+smi+":"+sse;
+				messge.innerHTML=ans;
+}
+
+				show();
+				setInterval(show,1000);
+			</script>
+		</center>
+	</body>
+</html>
